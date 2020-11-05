@@ -1,0 +1,33 @@
+.logo-title {
+	padding-top: 13px;
+}
+
+.header-background {
+	background: #d6e4ff;
+}
+
+.header-logo-title {
+	color: rgb(75, 74, 74) !important;
+}
+
+.menu-header {
+	text-align: right;
+	border: 0px solid !important;
+	background: #d6e4ff;
+	padding-top: 5px;
+}
+
+.menu-header-sign-in {
+	font-weight: 700;
+	color: #1890ff;
+}
+
+.menu-header-sign-in:hover {
+	font-weight: 700;
+	color: #40a9ff !important;
+	border-bottom: 2px solid transparent !important;
+}
+
+.menu-header-item-button:hover {
+	border-bottom: 2px solid transparent !important;
+}
