@@ -18,18 +18,9 @@ module.exports = {
 				include: path.resolve(__dirname, '../'),
 			},
 			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					'style-loader',
-					'css-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							// Prefer `dart-sass`
-							implementation: require('sass'),
-						},
-					},
-				],
+				test: /\.(s*)css$/,
+				use: ['style-loader', 'css-loader', 'sass-loader'],
+				include: path.resolve(__dirname, '../'),
 			},
 		],
 	},
