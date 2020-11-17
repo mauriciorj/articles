@@ -1,33 +1,14 @@
-.logo-title {
-	padding-top: 13px;
+.menu-item-default, menu-item-default:link, menu-item-default:visited, menu-item-default:hover, menu-item-default:active{
+	border-bottom: 0px solid transparent !important;
 }
 
-.header-background {
-	background: #d6e4ff;
-}
 
-.header-logo-title {
-	color: rgb(75, 74, 74) !important;
-}
-
-.menu-header {
-	text-align: right;
-	border: 0px solid !important;
-	background: #d6e4ff;
-	padding-top: 5px;
-}
-
-.menu-header-sign-in {
+.menu-item-highlight, menu-item-highlight:link, menu-item-highlight:visited, menu-item-highlight:hover, menu-item-highlight:active {
 	font-weight: 700;
-	color: #1890ff;
+	border-bottom: 0px solid transparent !important;
 }
 
-.menu-header-sign-in:hover {
-	font-weight: 700;
-	color: #40a9ff !important;
-	border-bottom: 2px solid transparent !important;
-}
 
-.menu-header-item-button:hover {
-	border-bottom: 2px solid transparent !important;
+.menu-item-button, menu-item-button:link, menu-item-button:visited, menu-item-button:hover, menu-item-button:active {
+	border-bottom: 0px solid transparent !important;
 }

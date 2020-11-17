@@ -1,13 +1,11 @@
 import React from 'react';
-//import { addDecorator } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/styles/defaultTheme';
 //import GlobalStyle from '../src/styles/globalStyles';
 
 import 'antd/dist/antd.css';
 import '../src/components/assets/google-font/fonts.css';
-
-//addDecorator(s => <ThemeProvider theme={theme}>{s()}</ThemeProvider>);
+import StoryRouter from 'storybook-react-router';
 
 export const decorators = [
 	(Story) => (
@@ -15,6 +13,7 @@ export const decorators = [
 			<Story />
 		</ThemeProvider>
 	),
+	StoryRouter()
 ];
 
 export const parameters = {

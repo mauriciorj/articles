@@ -13,15 +13,29 @@ const HeaderTemplate: Story<HeaderProps> = (args) => <HeaderComponent {...args} 
 
 export const Header = HeaderTemplate.bind({});
 Header.args = {
-	logoInfo: [{ 
-        type: 'Text', 
-        title: 'Articles', 
-        altText: 'Pyschy, the best solution' 
-    }],
+	logoInfo: [
+		{
+			type: 'Text',
+			title: 'Articles',
+            altText: 'Pyschy, the best solution',
+            link: '#home'
+		},
+	],
 	headerLinks: [
-    {
-        headerTitle: 'Contact Us', 
-        type: 'Button' 
-    }
-],
+		{
+			headerTitle: 'Default',
+			type: 'Default',
+			link: '#default',
+		},
+		{
+			headerTitle: 'Highlight',
+			type: 'Highlight',
+			link: '#Highlight',
+		},
+		{
+			headerTitle: 'Button',
+			type: 'Button',
+			link: '#button',
+		},
+	],
 };
