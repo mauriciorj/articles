@@ -11,4 +11,4 @@
 ## Storybook
 
 ### To open the storybook:
-on artciles directory: ```yarn workspace web_component_library storybook```
+On artciles directory: ```yarn workspace web_component_library storybook```
