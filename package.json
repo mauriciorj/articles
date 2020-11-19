@@ -9,7 +9,7 @@
     "packages": [
       "client",
       "web_component_library",
-      "scrapper"
+      "articlesRobot"
     ]
   },
   "version": "1.0.0"
