@@ -8,7 +8,9 @@ import {
 	ColorPaletteComponentWhite,
 	ColorPaletteComponentRed,
 	ColorPaletteComponentYellow,
-} from './styles';
+} from './styled-component';
+
+//This is the only component that I'm using styled component system
 
 export const ColorPalette = () => (
 	<Card title="Color Palette" bordered={false}>
