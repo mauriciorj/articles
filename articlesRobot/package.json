@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "crawler": "^1.2.2"
-  },
-  "type": "module"
+  "license": "ISC"
 }
