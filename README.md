@@ -12,3 +12,8 @@
 
 ### To open the storybook:
 On artciles directory: ```yarn workspace web_component_library storybook```
+
+## Articles & Firebase
+### !Important
+Check if the nodes modules were installed on /articlesRobot/functions<br/>
+If it's not installed, just run ```yarn install --network-timeou 100000``` on /articlesRobot/functions
