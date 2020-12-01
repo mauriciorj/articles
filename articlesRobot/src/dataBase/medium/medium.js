@@ -13,7 +13,7 @@ const { v4: uuidv4 } = require('uuid');
 
 //using postgres
 const text =
-  'INSERT INTO blogs(id, source, title, link) VALUES ($1, $2, $3, $4) RETURNING *';
+  'INSERT INTO blogs(uuid, source, title, link) VALUES ($1, $2, $3, $4) RETURNING *';
 const values = [uuidv4(), 'medium', 'this is title test','http://www.medium.com'];
 async function testInsert() {
   try {
