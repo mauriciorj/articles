@@ -1,6 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-import App from "./App";
-
-ReactDOM.render(<App />, document.getElementById("root"));
+export { ArticleCard } from './components/ArticleCard/ArticleCard';
+export { Button } from './components/Button/Button';
+//export { ColorPalette } from './components/ColorPalette/ColorPalette';
+export { Footer } from './components/Footer/Footer';
+export { Header } from './components/Header/Header';
