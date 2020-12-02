@@ -22,6 +22,11 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.3.0",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
     "@types/react": "^17.0.0",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
