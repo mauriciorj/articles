@@ -1,5 +1,8 @@
-export { ArticleCard } from './components/ArticleCard/ArticleCard';
-export { Button } from './components/Button/Button';
+import './App.css';
+
 //export { ColorPalette } from './components/ColorPalette/ColorPalette';
-export { Footer } from './components/Footer/Footer';
-export { Header } from './components/Header/Header';
+
+export * from './components/ArticleCard/ArticleCard';
+export * from './components/Button/Button';
+export * from './components/Footer/Footer';
+export * from './components/Header/Header';

@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "web_component_library/dist/Header";
+import { Header } from 'wcl_articles';
 
 const logoInfo = [
 		{
