@@ -8,7 +8,7 @@
 		"start": "npm run start",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "webpack-dev-server --mode development --env.development --open --hot --progress",
-		"build": "npm run clean && babel ./src -d ./dist --extensions \".ts,.js\" --copy-files && npm run emotion && cp -R ./src/components/assets/* ./dist",
+		"build": "npm run clean && babel ./src -d ./dist --extensions \".ts,.js\" --copy-files && npm run emotion && cp -R ./src/components/assets/* ./dist/components",
 		"emotion": "cross-env NODE_ENV=emotion babel src/* -d emotion",
 		"clean": "rm -rf dist",
 		"lint": "eslint --ignore-path .eslintignore",
