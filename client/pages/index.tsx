@@ -1,16 +1,16 @@
 import React from "react";
 import { Header } from 'wcl_articles';
 
-const logoInfo = [
+const headerAgs = {
+	logoInfo: [
 		{
 			type: 'Text',
 			title: 'Articles',
             altText: 'Pyschy, the best solution',
             link: '#home'
 		},
-	];
-
-const headerLinks = [
+	],
+	headerLinks: [
 		{
 			headerTitle: 'Default',
 			type: 'Default',
@@ -26,10 +26,11 @@ const headerLinks = [
 			type: 'Button',
 			link: '#button',
 		},
-	];
+	]
+}
 
 const HomePage = () => {
-  return <Header headerLinks={headerLinks} logoInfo={logoInfo}/>;
+  return <Header {...headerAgs}/>;
 };
 
 export default HomePage;
