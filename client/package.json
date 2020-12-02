@@ -18,7 +18,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1",
-    "wcl_articles": "^1.0.3"
+    "wcl_articles": "^1.0.5"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

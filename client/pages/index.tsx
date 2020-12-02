@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from 'wcl_articles';
+import { Header, Button } from 'wcl_articles';
 
 const headerAgs = {
 	logoInfo: [
@@ -30,7 +30,7 @@ const headerAgs = {
 }
 
 const HomePage = () => {
-  return <Header {...headerAgs}/>;
+  return <div><Header {...headerAgs}/><Button label="Test Burron" /></div>;
 };
 
 export default HomePage;
