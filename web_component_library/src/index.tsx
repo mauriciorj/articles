@@ -1,5 +1,3 @@
-import './App.css';
-
 //export { ColorPalette } from './components/ColorPalette/ColorPalette';
 
 export * from './components/ArticleCard/ArticleCard';

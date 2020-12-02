@@ -6299,10 +6299,10 @@ watchpack@^1.7.4:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.0"
 
-wcl_articles@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/wcl_articles/-/wcl_articles-1.0.5.tgz#4f2814df3a9b15f4a4574518cd7066cc5d5e5f98"
-  integrity sha512-jiY0ysoaTLfi/XltcB+YpnN2VboSMcfk6aJSwD82s6GxZ+fdO/8QHve6pahaHVQWEgSTzUuMljMIyUgSWtzEXA==
+wcl_articles@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/wcl_articles/-/wcl_articles-1.0.6.tgz#1757e3d1f06661d279e12ac3b4d2f3e44f8817e9"
+  integrity sha512-rvduwqdMN4XNsPxcwpfl1AKavt0ePtFNK0kE2WcJGmfpw4/KvLCM6XvzPN8Z9TeOrRx4l1E4n9Q0CXTa3sJqHA==
   dependencies:
     antd "^4.6.6"
     react "^16.13.1"

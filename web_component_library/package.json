@@ -1,6 +1,6 @@
 {
 	"name": "wcl_articles",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "",
 	"main": "dist/index.tsx",
 	"module": "dist/index.tsx",
