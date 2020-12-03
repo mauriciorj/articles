@@ -1,6 +1,6 @@
 //export { ColorPalette } from './components/ColorPalette/ColorPalette';
 
-export * from './components/ArticleCard/ArticleCard';
-export * from './components/Button/Button';
-export * from './components/Footer/Footer';
-export * from './components/Header/Header';
+export { ArticleCard } from './components/ArticleCard/ArticleCard';
+export { Button } from './components/Button/Button';
+export { Footer } from './components/Footer/Footer';
+export { Header } from './components/Header/Header';
