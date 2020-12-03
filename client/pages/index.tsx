@@ -1,36 +1,8 @@
 import React from "react";
-import { Header, Button } from 'wcl_articles';
-
-const headerAgs = {
-	logoInfo: [
-		{
-			type: 'Text',
-			title: 'Articles',
-            altText: 'Pyschy, the best solution',
-            link: '#home'
-		},
-	],
-	headerLinks: [
-		{
-			headerTitle: 'Default',
-			type: 'Default',
-			link: '#default',
-		},
-		{
-			headerTitle: 'Highlight',
-			type: 'Highlight',
-			link: '#Highlight',
-		},
-		{
-			headerTitle: 'Button',
-			type: 'Button',
-			link: '#button',
-		},
-	]
-}
+import { MainPage } from './containers/mainPage';
 
 const HomePage = () => {
-  return <div><Header {...headerAgs}/><Button label="Test Burron" /></div>;
+  return <div><MainPage /></div>;
 };
 
 export default HomePage;
