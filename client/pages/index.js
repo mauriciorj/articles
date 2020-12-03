@@ -1,12 +1,10 @@
 import React from "react";
-import { Button } from "wcl_articles";
-
-const clickHandler = () => {
-  console.log('click handler is working!')
-}
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../src/styles/defaultTheme';
+import { MainPage } from '../src/containers/mainPage/mainPage';
 
 const HomePage = () => {
-  return <div><Button label="test button" size="large" onClick={clickHandler}/></div>;
+  return <ThemeProvider theme={theme}><MainPage /></ThemeProvider>;
 };
 
 export default HomePage;
