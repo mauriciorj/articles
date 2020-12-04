@@ -1,5 +1,5 @@
 //const fireBaseDb = require('../fireBaseConfig');
-const postgresDb = require("../postgresConfig");
+const postgresDb = require("../../dataBase/postgresConfig");
 const { v4: uuidv4 } = require('uuid');
 
 //using firebase

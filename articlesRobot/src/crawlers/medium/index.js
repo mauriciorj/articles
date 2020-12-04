@@ -1,6 +1,17 @@
 var Crawler = require("crawler");
 var CheckLinks = require("./checkLinks");
+const fs = require("fs");
 
+var now = new Date();
+var logfile_name =
+  now.getFullYear() +
+  "-" +
+  now.getMonth() +
+  "-" +
+  now.getDate() +
+  ".txt";
+
+fs.openSync(`./temp/${logfile_name}`, 'w');
 // This crawler is just to find all links starting on the link provieded at bottom
 var c = new Crawler({
   maxConnections: 5,
@@ -19,4 +30,4 @@ var c = new Crawler({
 });
 
 // Queue URLs with custom callbacks & parameters
-c.queue("https://medium.com/topic/javascript");
+c.queue("https://medium.com/jspoint");
