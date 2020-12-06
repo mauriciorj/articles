@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header } from './css'
-import { ButtonLogin } from '../buttonLogin/buttonLogin';
+import { Button } from 'wcl_articles/src/components/Button/Button';
 import { colors } from '../../styles/theme';
 
 export const MainHeader = () => {
     return(
         <Header width={1} background={colors.themeYellow}>
-            <ButtonLogin variant="contained" color="primary" label="Log In"/>
+            <Button label="component test" />
         </Header>
     )
 }
