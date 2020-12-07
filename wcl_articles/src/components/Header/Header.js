@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Toolbar, Box, Grid, InputBase, Typography } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { MainHeader, SearchDiv, SearchIconDiv } from "./css";
-import { Button } from '../Button/Button';
+import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 
 export const Header = ({ logoInfo, headerLinks }) => {
@@ -16,11 +16,7 @@ export const Header = ({ logoInfo, headerLinks }) => {
           <Grid xs={2}>
             <Typography variant="h6" noWrap>
               {logoInfo?.map((logo) =>
-                logo.type === "Text" ? (
-                    logo.title
-                ) : (
-                  'IMAGE'
-                )
+                logo.type === "Text" ? logo.title : "IMAGE"
               )}
             </Typography>
           </Grid>
@@ -41,7 +37,7 @@ export const Header = ({ logoInfo, headerLinks }) => {
               </SearchIconDiv>
             </SearchDiv>
           </Grid>
-          <Grid xs={5} >
+          <Grid xs={5}>
             <Box display="flex" justifyContent="flex-end">
               {headerLinks?.map((header, index) =>
                 header.type === "Default" ? (
@@ -49,30 +45,40 @@ export const Header = ({ logoInfo, headerLinks }) => {
                     key={index}
                     style={{
                       color: `${activeTheme.colors.themeWhite}`,
-                      paddingRight: '30px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center'
+                      paddingRight: "30px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
                     }}
                   >
-                      {header.headerTitle}
+                    {header.headerTitle}
                   </Typography>
                 ) : header.type === "Highlight" ? (
-                  <Typography
-                    key={index}
-                    style={{
-                      color: `${activeTheme.colors.themeWhite}`,
-                      fontWeight: '600',
-                      paddingRight: '30px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center'
-                    }}
-                  >
+                  <Link
+									to={header.link}
+									style={{
+                    textDecoration: 'none',
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+									}}
+								>
+                    <Typography
+                      key={index}
+                      style={{
+                        color: `${activeTheme.colors.themeWhite}`,
+                        fontWeight: "600",
+                        paddingRight: "30px",
+                      }}
+                    >
                       {header.headerTitle}
-                  </Typography>
+                    </Typography>
+                  </Link>
                 ) : (
-                    <Button label={header.headerTitle} background={activeTheme.colors.themeWhite}/>
+                  <Button
+                    label={header.headerTitle}
+                    background={activeTheme.colors.themeWhite}
+                  />
                 )
               )}
             </Box>

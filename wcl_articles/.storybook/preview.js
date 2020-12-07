@@ -1,20 +1,19 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../src/styles/theme";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter } from "react-router-dom";
 
 import "../src/components/assets/google-font/fonts.css";
-import StoryRouter from "storybook-react-router";
+//import StoryRouter from "storybook-react-router";
 
 export const decorators = [
   (Story) => (
-    <MemoryRouter initialEntries={["/"]}>
+    <MemoryRouter>
       <ThemeProvider theme={theme}>
         <Story />
       </ThemeProvider>
     </MemoryRouter>
-  ),
-  StoryRouter(),
+  )
 ];
 
 export const parameters = {
