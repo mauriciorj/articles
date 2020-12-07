@@ -1,20 +1,34 @@
 import React from "react";
-import { Header } from "./css";
-import { Button, SearchBar } from "wcl_articles/src/components/Button/Button";
-import { colors } from "../../styles/theme";
-import { Box, Typography, Toolbar } from "@material-ui/core";
+import { Header } from "wcl_articles/src/components/Header/Header";
 
 export const MainHeader = () => {
   return (
-    <Header width={1} height="60px" background={colors.themeBlue}>
-      <Toolbar>
-        <Typography variant="h6">articles</Typography>
-        <SearchBar
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-        <Button label="component test" />
-      </Toolbar>
-    </Header>
+    <Header
+      logoInfo={[
+        {
+          type: "Text",
+          title: "articles",
+          altText: "Pyschy, the best solution",
+          link: "#home",
+        },
+      ]}
+      headerLinks={[
+        {
+          headerTitle: 'Default',
+          type: 'Default',
+          link: '#default',
+        },
+        {
+          headerTitle: 'Highlight',
+          type: 'Highlight',
+          link: '#Highlight',
+        },
+        {
+          headerTitle: 'Button',
+          type: 'Button',
+          link: '#button',
+        },
+      ]}
+    />
   );
 };

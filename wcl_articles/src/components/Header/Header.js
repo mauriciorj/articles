@@ -17,17 +17,9 @@ export const Header = ({ logoInfo, headerLinks }) => {
             <Typography variant="h6" noWrap>
               {logoInfo?.map((logo) =>
                 logo.type === "Text" ? (
-                  <Link
-                    to={logo.link}
-                    style={{
-                      color: `${activeTheme.colors.themeWhite}`,
-                      textDecoration: "none",
-                    }}
-                  >
-                    {logo.title}
-                  </Link>
+                    logo.title
                 ) : (
-                  <Link to={logo.link}>IMAGE</Link>
+                  'IMAGE'
                 )
               )}
             </Typography>
@@ -49,7 +41,7 @@ export const Header = ({ logoInfo, headerLinks }) => {
               </SearchIconDiv>
             </SearchDiv>
           </Grid>
-          <Grid xs={5}>
+          <Grid xs={5} >
             <Box display="flex" justifyContent="flex-end">
               {headerLinks?.map((header, index) =>
                 header.type === "Default" ? (
@@ -57,21 +49,13 @@ export const Header = ({ logoInfo, headerLinks }) => {
                     key={index}
                     style={{
                       color: `${activeTheme.colors.themeWhite}`,
-                      paddingLeft: '30px',
+                      paddingRight: '30px',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'center'
                     }}
                   >
-                    <Link
-                      to={header.link}
-                      style={{
-                        color: `${activeTheme.colors.themeWhite}`,
-                        textDecoration: "none",
-                      }}
-                    >
                       {header.headerTitle}
-                    </Link>
                   </Typography>
                 ) : header.type === "Highlight" ? (
                   <Typography
@@ -79,33 +63,16 @@ export const Header = ({ logoInfo, headerLinks }) => {
                     style={{
                       color: `${activeTheme.colors.themeWhite}`,
                       fontWeight: '600',
-                      paddingLeft: '30px',
+                      paddingRight: '30px',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'center'
                     }}
                   >
-                    <Link
-                      to={header.link}
-                      style={{
-                        color: `${activeTheme.colors.themeWhite}`,
-                        textDecoration: "none",
-                      }}
-                    >
                       {header.headerTitle}
-                    </Link>
                   </Typography>
                 ) : (
-                  <Link
-                    to={header.link}
-                    style={{
-                      color: `${activeTheme.colors.themeWhite}`,
-                      textDecoration: "none",
-                      paddingLeft: "30px",
-                    }}
-                  >
                     <Button label={header.headerTitle} background={activeTheme.colors.themeWhite}/>
-                  </Link>
                 )
               )}
             </Box>
