@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as BaseButton } from '@material-ui/core';
+import { BaseButton } from './css';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ label, size, onClick }) => {
+export const Button = ({ label, size, onClick, background }) => {
   return (
     <BaseButton
       variant="contained"
       disableElevation
       onClick={onClick}
       size={size}
+      background={background}
     >
       {label}
     </BaseButton>

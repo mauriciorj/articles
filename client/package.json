@@ -13,11 +13,14 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
     "next": "^10.0.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "css-loader": "^5.0.1",
     "next-transpile-modules": "^6.0.0",
     "sass-loader": "^10.1.0",

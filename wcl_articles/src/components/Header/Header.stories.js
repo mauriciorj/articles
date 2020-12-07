@@ -1,18 +1,39 @@
-import React from 'react';
+import React from "react";
 
-import { Header } from './Header';
+import { Header } from "./Header";
 
 export default {
-  title: 'Example/Header',
+  title: "Example/Header",
   component: Header,
 };
 
 const Template = (args) => <Header {...args} />;
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
+export const MainHeader = Template.bind({});
+MainHeader.args = {
+  logoInfo: [
+    {
+      type: "Text",
+      title: "articles",
+      altText: "Pyschy, the best solution",
+      link: "#home",
+    },
+  ],
+  headerLinks: [
+		{
+			headerTitle: 'Default',
+			type: 'Default',
+			link: '#default',
+		},
+		{
+			headerTitle: 'Highlight',
+			type: 'Highlight',
+			link: '#Highlight',
+		},
+		{
+			headerTitle: 'Button',
+			type: 'Button',
+			link: '#button',
+		},
+	],
 };
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
