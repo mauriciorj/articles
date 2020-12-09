@@ -8,8 +8,9 @@
   "workspaces": {
     "packages": [
       "client",
-      "wcl_articles",
-      "articlesRobot"
+      "clientApi",
+      "crawler",
+      "wcl_articles"
     ]
   },
   "version": "1.0.0"
