@@ -8,7 +8,7 @@
   "workspaces": {
     "packages": [
       "client",
-      "clientApi",
+      "client-api",
       "crawler",
       "wcl_articles"
     ]
