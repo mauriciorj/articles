@@ -15,3 +15,6 @@
 
 
 ### Postgres Graph Admin Tool -> https://www.pgadmin.org/
+
+## Sequelize
+Install -> npm install -g sequelize-cli
