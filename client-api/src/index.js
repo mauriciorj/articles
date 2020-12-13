@@ -33,7 +33,7 @@ server.applyMiddleware({ app, cors: false });
 //Start Application
 const startApp = async () => {
   try {
-    await postgresConn.connect();
+    await postgresConn.authenticate();
     consola.success({ message: `Postgres connected`, badge: true });
     app.listen(process.env.PORT, () =>
       consola.success({
