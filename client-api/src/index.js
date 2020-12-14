@@ -33,8 +33,9 @@ server.applyMiddleware({ app, cors: false });
 //Start Application
 const startApp = async () => {
   try {
-    await postgresConn.authenticate();
-    consola.success({ message: `Postgres connected`, badge: true });
+    await postgresConn.sequelize.sync({ force: true }).then(async () => {
+      consola.success({ message: `Postgres connected`, badge: true });
+    });
     app.listen(process.env.PORT, () =>
       consola.success({
         message: `🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`,
