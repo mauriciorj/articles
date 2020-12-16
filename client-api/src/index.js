@@ -6,14 +6,10 @@ import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
 import { ApolloServer } from "apollo-server-express";
 import postgresConn from "./postgresConn";
+import session from "express-session";
 
-//Import configuration
-const {
-  PORT,
-  NODE_ENV,
-  APP_SECRET,
-  APP_REFRESH_SECRET,
-} = require("./config/index");
+//! initialize sequelize with session store
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 //Initialize App
 const app = express();
@@ -27,15 +23,26 @@ const server = new ApolloServer({
   resolvers,
   playground: true,
   introspection: true,
+  context: async ({ req, res, connection }) => {
+    if (req) {
+      return {
+        postgresConn,
+        res,
+      };
+    }
+  },
 });
 server.applyMiddleware({ app, cors: false });
 
 //Start Application
 const startApp = async () => {
   try {
-    await postgresConn.sequelize.sync({ force: true }).then(async () => {
-      consola.success({ message: `Postgres connected`, badge: true });
-    });
+    await postgresConn.sequelize.authenticate();
+    consola.success({ message: 'Connection has been established successfully.', badge: true });
+
+    await postgresConn.sequelize.sync({ force: false });
+    consola.success({ message: 'All models were synchronized successfully.', badge: true });
+
     app.listen(process.env.PORT, () =>
       consola.success({
         message: `🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`,

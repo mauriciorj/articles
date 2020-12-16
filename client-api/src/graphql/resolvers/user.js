@@ -1,7 +1,10 @@
 export default {
   Query: {
-    users: async (root, args, {db}, info) => {
-      const users = await db.user.findAll();
+    users: async (root, args, {postgresConn}, info) => {
+      // console.log('db', postgresConn);
+      // console.log('args', args)
+      const users = await postgresConn.user.findAll();
+      //console.log('users', users);
         if (!users) {
           throw new Error('No users found');
         }
@@ -9,9 +12,9 @@ export default {
     },
   },
   Mutation: {
-    createUser: async (root, {input}, {db}) => {
+    createUser: async (root, {input}, {postgresConn}) => {
       const { username, email } = input;
-      const userExists = await db.user.findOne({
+      const userExists = await postgresConn.user.findOne({
         where: {
           [Op.or]: [{ email }, { username }],
         },
@@ -19,7 +22,7 @@ export default {
       if (userExists) {
         throw new Error('A user with this email or username already exists');
       }
-      const user = await db.user.create({
+      const user = await postgresConn.user.create({
         ...input,
       });
 
