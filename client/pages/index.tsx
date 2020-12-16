@@ -1,10 +1,10 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../src/styles/theme";
-import RouterApp from "./routerApp";
-import { BrowserRouter } from "react-router-dom";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { ApolloProvider } from "@apollo/client";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../src/styles/theme';
+import RouterApp from './routerApp';
+import { BrowserRouter } from 'react-router-dom';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: process.env.APOLLO_SERVER_URL,
