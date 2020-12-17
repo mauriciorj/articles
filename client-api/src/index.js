@@ -7,13 +7,38 @@ import resolvers from "./graphql/resolvers";
 import { ApolloServer } from "apollo-server-express";
 import postgresConn from "./postgresConn";
 import session from "express-session";
+import cookieParser from "cookie-parser";
+import http from "http";
 
 //! initialize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-//Initialize App
+//Initialize Express
 const app = express();
-app.use(cors());
+app.use(cookieParser());
+app.use(
+  session({
+    name: process.env.SESSION_NAME,
+    secret: process.env.APP_SECRET,
+    store: new SequelizeStore({
+      db: postgresConn.sequelize,
+    }),
+    resave: false, // we support the touch method so per that express-session docs this should be set to false
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV == "production",
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: false,
+    },
+  })
+);
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 //Setting up the headers
 app.disable("x-powered-by");
@@ -28,11 +53,16 @@ const server = new ApolloServer({
       return {
         postgresConn,
         res,
+        session: req.session,
+        me: req.session.user,
+        secret: process.env.APP_SECRET,
       };
     }
   },
 });
-server.applyMiddleware({ app, cors: false });
+server.applyMiddleware({ app, path: "/graphql", cors: false });
+
+const httpServer = http.createServer(app);
 
 //Start Application
 const startApp = async () => {
@@ -43,7 +73,7 @@ const startApp = async () => {
     await postgresConn.sequelize.sync({ force: false });
     consola.success({ message: 'All models were synchronized successfully.', badge: true });
 
-    app.listen(process.env.PORT, () =>
+    httpServer.listen(process.env.PORT, () =>
       consola.success({
         message: `🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`,
         badge: true,
