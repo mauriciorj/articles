@@ -9,12 +9,18 @@ import postgresConn from "./postgresConn";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import http from "http";
+import bodyParser from 'body-parser';
 
 //! initialize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 //Initialize Express
 const app = express();
+
+// parse application/json
+app.use(bodyParser.json());
+
+//Initialize all middleware
 app.use(cookieParser());
 app.use(
   session({
@@ -40,14 +46,12 @@ app.use(
   })
 );
 
-//Setting up the headers
-app.disable("x-powered-by");
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   playground: true,
   introspection: true,
+  cors: true,
   context: async ({ req, res, connection }) => {
     if (req) {
       return {
@@ -60,6 +64,7 @@ const server = new ApolloServer({
     }
   },
 });
+
 server.applyMiddleware({ app, path: "/graphql", cors: false });
 
 const httpServer = http.createServer(app);

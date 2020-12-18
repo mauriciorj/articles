@@ -21,3 +21,14 @@ Install -> npm install -g sequelize-cli</br>
 Documentation -> https://sequelize.org/v5/</br>
 
 ### The tables will be created automatically by Sequelize
+
+## Graphql Playground
+
+### To use 'query' on playground locally, please change the configuration
+1 - On playground page, click on the 'gear' icon above the 'SAVE SETTINGS' options</br>
+2 - change the "request.credentials" from "omit" to "include"</br>
+3 - Save and run the query
+
+## PostMan
+In order to create a session and store an cookie locally</br>
+First of all run the `mutation login` </br>

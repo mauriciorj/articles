@@ -23,8 +23,6 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: true,
     },
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE,
   });
 
   User.findByLogin = async (login) => {

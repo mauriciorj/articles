@@ -28,6 +28,7 @@ export default {
       }
     ),
   },
+  
   Mutation: {
     createUser: async (root, { uuid, name, email, password }, { postgresConn, session }) => {
       const userExists = await postgresConn.user.findOne({
@@ -43,8 +44,7 @@ export default {
       });
 
       session.user = {
-        id: user.dataValues.id,
-        name: user.dataValues.name,
+        uuid: user.dataValues.uuid,
       };
 
       return user;
@@ -64,12 +64,12 @@ export default {
       }
 
       session.user = {
-        id: user.dataValues.id,
-        name: user.dataValues.name,
+        uuid: user.dataValues.uuid,
       };
 
       return user;
     },
+
     logout: async (root, args, { session, res }, info) => {
       let loggedOutUser = session.user;
       await session.destroy();

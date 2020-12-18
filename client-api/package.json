@@ -27,9 +27,11 @@
     "apollo-server": "^2.19.0",
     "apollo-server-express": "^2.19.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "consola": "^2.15.0",
     "cors": "^2.8.5",
     "esm": "^3.2.25",
+    "express-jwt": "^6.0.0",
     "graphql": "^15.4.0",
     "sequelize": "5.21.3"
   }
