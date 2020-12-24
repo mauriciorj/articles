@@ -261,6 +261,30 @@ FormCreateAccount.propTypes = {
    */
   textBetweenLogins: PropTypes.string.isRequired,
   /**
+   * First Name label and placeholder
+   */
+  firstNameLabel: PropTypes.string.isRequired,
+  /**
+   * First Name error: true or false
+   */
+  firstNameError: PropTypes.bool.isRequired,
+  /**
+   * First Name error message
+   */
+  firstNameErrorText: PropTypes.string.isRequired,
+  /**
+   * First Name label and placeholder
+   */
+  lastNameLabel: PropTypes.string.isRequired,
+  /**
+   * First Name error: true or false
+   */
+  lastNameError: PropTypes.bool.isRequired,
+  /**
+   * First Name error message
+   */
+  lastNameErrorText: PropTypes.string.isRequired,
+  /**
    * Email label and placeholder
    */
   emailLabel: PropTypes.string.isRequired,
