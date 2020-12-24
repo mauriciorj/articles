@@ -1,29 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import { Button } from './Button';
+import { Button } from "./Button";
 
 export default {
-  title: 'Example/Button',
+  title: "Components/Button",
   component: Button,
 };
 
-const Template = (args) => <Button {...args} />;
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button Small',
+export const ButtonVariants = () => {
+  return (
+    <>
+      <Button label="small" size="small" />{" "}
+      <Button label="medium" size="medium" />{" "}
+      <Button label="Large" size="large" />{" "}
+      <Button background="themeBlue" color="themeWhite" label="Theme Color - themeBlue" />{" "}
+      <Button background="themeBlue" color="themeWhite" disableElevation="true" label="Elevation Disable" />{" "}
+    </>
+  );
 };
-
-export const Medium = Template.bind({});
-Medium.args = {
-  size: 'medium',
-  label: 'Button Medium',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button Large',
-};
-

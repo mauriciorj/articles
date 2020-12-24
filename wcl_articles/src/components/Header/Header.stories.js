@@ -3,7 +3,7 @@ import React from "react";
 import { Header } from "./Header";
 
 export default {
-  title: "Example/Header",
+  title: "Components/Header",
   component: Header,
 };
 
@@ -13,27 +13,27 @@ export const MainHeader = Template.bind({});
 MainHeader.args = {
   logoInfo: [
     {
-      type: "Text",
-      title: "articles",
       altText: "Pyschy, the best solution",
-      link: "#home",
+	  link: "#home",
+	  title: "articles",
+	  type: "Text",
     },
   ],
   headerLinks: [
 		{
 			headerTitle: 'Default',
-			type: 'Default',
 			link: '#default',
+			type: 'Default',
 		},
 		{
 			headerTitle: 'Highlight',
-			type: 'Highlight',
 			link: '#Highlight',
+			type: 'Highlight',
 		},
 		{
 			headerTitle: 'Button',
-			type: 'Button',
 			link: '#button',
+			type: 'Button',
 		},
 	],
 };
