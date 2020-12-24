@@ -7,7 +7,7 @@ import { MainHeader, SearchDiv, SearchIconDiv } from "./css";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 
-export const Header = ({ logoInfo, headerLinks }) => {
+export const Header = ({ headerLinks, logoInfo }) => {
   const activeTheme = useContext(ThemeContext);
   return (
     <Grid xs={12}>
@@ -25,9 +25,9 @@ export const Header = ({ logoInfo, headerLinks }) => {
               <InputBase
                 placeholder="Search…"
                 style={{
-                  position: "relative",
                   color: activeTheme.colors.themeGray,
                   paddingLeft: "10px",
+                  position: "relative",
                   width: "90%",
                 }}
                 inputProps={{ "aria-label": "search" }}
@@ -45,10 +45,10 @@ export const Header = ({ logoInfo, headerLinks }) => {
                     key={index}
                     style={{
                       color: `${activeTheme.colors.themeWhite}`,
-                      paddingRight: "30px",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
+                      paddingRight: "30px",
                     }}
                   >
                     {header.headerTitle}
@@ -57,10 +57,10 @@ export const Header = ({ logoInfo, headerLinks }) => {
                   <Link
 									to={header.link}
 									style={{
-                    textDecoration: 'none',
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
+                    textDecoration: 'none',
 									}}
 								>
                     <Typography
@@ -76,8 +76,8 @@ export const Header = ({ logoInfo, headerLinks }) => {
                   </Link>
                 ) : (
                   <Button
-                    label={header.headerTitle}
                     background={activeTheme.colors.themeWhite}
+                    label={header.headerTitle}
                   />
                 )
               )}
@@ -91,20 +91,20 @@ export const Header = ({ logoInfo, headerLinks }) => {
 
 Header.propTypes = {
   /**
-   * Logo information: can be a string or an image
-   */
-  logoInfo: PropTypes.shape({
-    type: PropTypes.oneOf(["Text", "Image"]),
-    title: PropTypes.string,
-    altText: PropTypes.string,
-    link: PropTypes.string,
-  }),
-  /**
    * Header links types
    */
   headerLinks: PropTypes.shape({
     headerTitle: PropTypes.string,
-    type: PropTypes.oneOf(["Default" | "Highlight" | "Button"]),
     link: PropTypes.string,
+    type: PropTypes.oneOf(["Default" | "Highlight" | "Button"]),
+  }),
+  /**
+   * Logo information: can be a string or an image
+   */
+  logoInfo: PropTypes.shape({
+    altText: PropTypes.string,
+    link: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.oneOf(["Text", "Image"]),
   }),
 };

@@ -10,20 +10,20 @@ export const MainHeader = styled(AppBar)`
 `;
 
 export const SearchDiv = styled.div`
-  position: relative;
   background-color: ${(props) => props.background};
   border-radius: 5px;
+  position: relative;
 `;
 
-export const SearchIconDiv = styled.div`
-  width: 10%;
-  height: 100%;
-  position: absolute;
-  pointerevents: none;
-  display: flex;
+export const SearchIconDiv = styled.div` 
   alignitems: center;
+  display: flex;
+  height: 100%;
   justifycontent: center;
+  padding-top: 5px;
+  pointerevents: none;
+  position: absolute;
   right: 0;
   top: 0;
-  padding-top: 5px;
+  width: 10%;
 `;

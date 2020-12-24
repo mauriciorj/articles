@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { BaseButton } from './css';
+import { ThemeContext } from "styled-components";
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ label, size, onClick, background }) => {
+export const Button = ({ background, color, disableElevation, label, onClick, size }) => {
+  const activeTheme = useContext(ThemeContext);
+
   return (
     <BaseButton
-      variant="contained"
-      disableElevation
+      background={activeTheme.colors[background]}
+      color={activeTheme.colors[color]}
+      disableElevation={disableElevation}
       onClick={onClick}
       size={size}
-      background={background}
+      variant="contained"
     >
       {label}
     </BaseButton>
@@ -21,20 +25,35 @@ export const Button = ({ label, size, onClick, background }) => {
 
 Button.propTypes = {
   /**
-   * What background color to use
+   * Background color
+   */
+  background: PropTypes.string,
+  /**
+   * Background color
+   */
+  color: PropTypes.string,
+  /**
+   * Disable elevation (3D appearance)
+   */
+  disableElevation: PropTypes.bool,
+  /**
+   * Button Label
    */
   label: PropTypes.string.isRequired,
   /**
-   * What size to use
-   */
-  size: PropTypes.string,
-  /**
-   * Optional click handler
+   * Click event handler
    */
   onClick: PropTypes.func,
+  /**
+   * Button Size: large, medium or small
+   */
+  size: PropTypes.string,
 };
 
 Button.defaultProps = {
-  size: 'medium',
+  background: '#FFF',
+  color: 'themeBlack',
+  disableElevation: false,
   onClick: undefined,
+  size: 'medium',
 };
