@@ -2,7 +2,7 @@ import React from 'react';
 import { InfoList } from './InfoList';
 
 const Component = {
-  title: ' CARDS/Card',
+  title: ' Components/Card',
   component: InfoList,
 };
 

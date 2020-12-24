@@ -3,7 +3,7 @@ import React from 'react';
 import { ArticleCard } from './ArticleCard';
 
 const CardConfig = {
-  title: 'CARDS/Card',
+  title: 'Components/Card',
   component: ArticleCard,
 };
 
