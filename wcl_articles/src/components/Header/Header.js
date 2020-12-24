@@ -1,9 +1,15 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import PropTypes from "prop-types";
-import { Toolbar, Box, Grid, InputBase, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Grid,
+  InputBase,
+  Typography,
+} from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import { MainHeader, SearchDiv, SearchIconDiv } from "./css";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 
@@ -11,7 +17,10 @@ export const Header = ({ headerLinks, logoInfo }) => {
   const activeTheme = useContext(ThemeContext);
   return (
     <Grid xs={12}>
-      <MainHeader position="static" background={activeTheme.colors.themeBlue}>
+      <AppBar
+        position="static"
+        style={{ backgroundColor: activeTheme.colors.themeBlue }}
+      >
         <Toolbar>
           <Grid xs={2}>
             <Typography variant="h6" noWrap>
@@ -21,7 +30,13 @@ export const Header = ({ headerLinks, logoInfo }) => {
             </Typography>
           </Grid>
           <Grid xs={5}>
-            <SearchDiv background={activeTheme.colors.themeWhite}>
+            <div
+              style={{
+                backgroundColor: activeTheme.colors.themeWhite,
+                borderRadius: "5px",
+                position: "relative",
+              }}
+            >
               <InputBase
                 placeholder="Search…"
                 style={{
@@ -32,10 +47,23 @@ export const Header = ({ headerLinks, logoInfo }) => {
                 }}
                 inputProps={{ "aria-label": "search" }}
               />
-              <SearchIconDiv>
+              <div
+                style={{
+                  alignitems: "center",
+                  display: "flex",
+                  height: "100%",
+                  justifycontent: "center",
+                  paddingTop: "5px",
+                  pointerevents: "none",
+                  position: "absolute",
+                  right: "0",
+                  top: "0",
+                  width: "10%",
+                }}
+              >
                 <SearchIcon style={{ color: activeTheme.colors.themeGray }} />
-              </SearchIconDiv>
-            </SearchDiv>
+              </div>
+            </div>
           </Grid>
           <Grid xs={5}>
             <Box display="flex" justifyContent="flex-end">
@@ -55,14 +83,14 @@ export const Header = ({ headerLinks, logoInfo }) => {
                   </Typography>
                 ) : header.type === "Highlight" ? (
                   <Link
-									to={header.link}
-									style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    textDecoration: 'none',
-									}}
-								>
+                    to={header.link}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      textDecoration: "none",
+                    }}
+                  >
                     <Typography
                       key={index}
                       style={{
@@ -84,7 +112,7 @@ export const Header = ({ headerLinks, logoInfo }) => {
             </Box>
           </Grid>
         </Toolbar>
-      </MainHeader>
+      </AppBar>
     </Grid>
   );
 };
