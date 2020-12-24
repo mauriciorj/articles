@@ -3,7 +3,7 @@ import React from "react";
 import { FormLogin } from "./FormLogin";
 
 export default {
-  title: "Components/LoginForm",
+  title: "Components/FormLogin",
   component: FormLogin,
 };
 
